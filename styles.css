@@ -19,6 +19,11 @@
 :root {
   --base-size: 15.552px;
   --black: #000;
+  /* Cargo bottom pin at 1440×900 is the footer, 137.188px = 10.5854938272rem */
+  --pin-bottom: 10.5854938272rem;
+  --fit-main: calc(100vh - 20rem - var(--pin-bottom));
+  --hero-h: calc(var(--fit-main) * 1.076);
+  --hero-w: calc(var(--hero-h) * 720 / 512);
   --sky: linear-gradient(
     90deg,
     #0a9dff 0%,
@@ -64,7 +69,8 @@ video {
 }
 
 .pinned-top {
-  padding: 0;
+  /* One Monument Grotesk fine line (1.55rem × 1.25) above the logo row */
+  padding: calc(1.55rem * 1.25) 0 0;
 }
 
 .pinned-bottom {
@@ -96,6 +102,7 @@ video {
   width: calc(100vh * 0.086 / 1.0836501901140685);
   max-width: none;
   line-height: 0;
+  vertical-align: top;
 }
 
 .logo img {
@@ -155,22 +162,39 @@ video {
   padding: 10rem 0 6rem;
 }
 
+body.home {
+  display: block;
+  min-height: 0;
+}
+
+body.home .pinned-bottom {
+  margin-top: 0;
+}
+
 .hero {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: flow-root;
   text-align: center;
-  padding: 2rem 0 1rem;
+  padding: 0 0 10rem;
 }
 
 .hero-art {
-  width: min(92vw, calc((100vh - 20rem) * 1.076 / 0.7111111111111111));
+  width: var(--hero-w);
+  margin-right: auto;
+  margin-left: auto;
+  /* Cargo centers the hero in the viewport, and keeps it 12px under the header */
+  margin-top: max(
+    12px,
+    calc((100vh - var(--hero-h)) / 2 - 1.55rem * 1.25 - 100vh * 0.086)
+  );
+}
+
+.hero-art video {
+  width: 100%;
+  height: auto;
 }
 
 .tagline {
-  margin: calc(1.25em * 3) 0 0;
+  margin: calc(1.15rem * 1.2 * 2 + 1.55rem * 1.25 * 3) 0 0;
   text-align: center;
   background: linear-gradient(
     90deg,
