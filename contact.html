@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Contact — N1+</title>
+    <title>N1+</title>
     <meta
       name="description"
       content="Contact NUMBER1PLUS, an experiential marketing studio in Berlin."
@@ -12,66 +12,74 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="site-header">
-      <a class="logo" href="index.html" aria-label="N1+ home">
-        <img src="assets/logo.gif" alt="1+" width="52" height="56" />
-      </a>
-      <a class="nav-about" href="about.html">ABOUT 1+</a>
+    <header class="pinned-top">
+      <div class="cols">
+        <div class="span-2 center">
+          <a class="logo" href="index.html" aria-label="N1+ home">
+            <img src="assets/logo.gif" alt="1+" width="526" height="570" />
+          </a>
+        </div>
+        <div class="span-7"></div>
+        <div class="span-1 center">
+          <a class="type-fine nav-link" href="about.html">ABOUT 1+</a>
+        </div>
+        <div class="span-2 center">
+          <a class="type-fine nav-link active" href="contact.html">CONTACT</a>
+        </div>
+      </div>
     </header>
 
-    <main class="panel is-open">
-      <div class="panel-inner">
-        <form
-          class="contact-form"
-          action="https://formsubmit.co/studio@number1plus.com"
-          method="POST"
-        >
-          <input type="hidden" name="_subject" value="N1+ website inquiry" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input
-            type="hidden"
-            name="_next"
-            value="https://number1plus.com/contact.html?sent=1"
-          />
-          <input type="text" name="_honey" style="display: none" tabindex="-1" autocomplete="off" />
+    <main class="page-main">
+      <div class="cols">
+        <div class="span-3"></div>
+        <div class="span-6">
+          <form
+            class="contact-form type-ultra"
+            action="https://formsubmit.co/studio@number1plus.com"
+            method="POST"
+          >
+            <input type="hidden" name="_subject" value="N1+ website inquiry" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value="https://number1plus.com/contact.html?sent=1" />
+            <input type="text" name="_honey" style="display: none" tabindex="-1" autocomplete="off" />
 
-          <label for="email">From:</label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            required
-            autocomplete="email"
-            placeholder="(enter your email address)..."
-          />
+            <label for="email">From:</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              autocomplete="email"
+              placeholder="(enter your email address)..."
+            />
 
-          <label for="message">Message</label>
-          <textarea
-            id="message"
-            name="message"
-            required
-            placeholder="Write your message..."
-          ></textarea>
+            <label for="message">Write your message...</label>
+            <textarea id="message" name="message" required></textarea>
 
-          <div class="form-actions">
-            <button type="button" onclick="location.href='index.html'">
-              Cancel
-            </button>
-            <button type="submit">Send</button>
-          </div>
-        </form>
-        <p class="form-note" id="sent-note" hidden>
-          Thanks — your message is on its way to studio@number1plus.com.
-        </p>
+            <div class="form-actions">
+              <button type="button" onclick="location.href='index.html'">Cancel</button>
+              <button type="submit">Send</button>
+            </div>
+          </form>
+          <p class="type-ultra form-note" id="sent-note" hidden>
+            Thanks — your message is on its way to studio@number1plus.com.
+          </p>
+        </div>
+        <div class="span-3"></div>
       </div>
     </main>
 
-    <footer class="site-footer">
-      <a class="footer-contact" href="contact.html">Contact</a>
-      <nav class="legal-links" aria-label="Legal">
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="imprint.html">Imprint</a>
-      </nav>
+    <footer class="pinned-bottom">
+      <hr class="site-rule" />
+      <div class="cols footer-links">
+        <div class="span-2"></div>
+        <div class="span-3">
+          <span class="type-ultra"><a href="privacy.html">PRIVACY POLICY</a></span>
+        </div>
+        <div class="span-7">
+          <span class="type-ultra"><a href="imprint.html">IMPRINT</a></span>
+        </div>
+      </div>
     </footer>
     <script>
       if (new URLSearchParams(location.search).has("sent")) {
